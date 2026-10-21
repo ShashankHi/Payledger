@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: payledger-be
+  datasource:
+    url: jdbc:mysql://localhost:3306/payledger
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    open-in-view: false
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
+
+server:
+  port: 9090
+
+app:
+  jwt:
+    secret: ${JWT_SECRET}
+    access-token-miutes: 15
+    refresh-token-days: 7
+  admin:
+    email: ${ADMIN_EMAIL}
+    password: ${ADMIN_PASSWORD}
